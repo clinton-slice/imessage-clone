@@ -1,7 +1,7 @@
 .sidebarChat {
   display: flex;
   align-items: center;
-  padding: 20px;
+  padding: 10px 20px;
   border-bottom: 1px solid lightgray;
   cursor: pointer;
 }
@@ -15,6 +15,10 @@
   margin-left: 15px;
   position: relative;
   width: 100%;
+}
+
+.sidebarChat_info > p {
+  font-size: 12px;
 }
 
 .sidebarChat_info > small {
