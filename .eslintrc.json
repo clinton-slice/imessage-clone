@@ -20,7 +20,7 @@
         "react"
     ],
     "rules": {
-        "max-len": ["error", {"code": 80}],
+        // "max-len": ["warn", {"code": 80}],
         "semi": ["error", "always"],
         "quotes": ["error", "double"],
         "prefer-promise-reject-errors": ["off"],
