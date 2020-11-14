@@ -14,7 +14,7 @@ const SideBar = () => {
     const [chats, setChats] = React.useState([]);
 
     React.useEffect(()=>{
-        db.collection("chats").onSnapshot(snapshot => 
+        db.collection("chats").onSnapshot((snapshot) => 
             setChats(
                 snapshot.docs.map((doc)=> ({
                     id: doc.id,
@@ -23,6 +23,17 @@ const SideBar = () => {
             )
         );
     },[]);
+    
+    // console.log(chats);
+
+    const addChat = () => {
+        const chatName = prompt("Please enter a chat name");
+        if (chatName){
+            db.collection("chats").add({
+                chatName: chatName,
+            });
+        }
+    };
     console.log(chats);
     return (
         <div className="sidebar">
@@ -37,13 +48,13 @@ const SideBar = () => {
                     <SearchIcon/>
                     <input type="text" placeholder="Search"/>
                 </div>
-                <IconButton variant="outlined" className='sidebar_inputButton'>
-                    <RateReviewOutlined/>
+                <IconButton onClick={addChat} variant="outlined" className='sidebar_inputButton'>
+                    <RateReviewOutlined />
                 </IconButton>
             </div>
             <div className="sidebar_chats">
-                {chats.map(({id, data: {chatName}}) => {
-                    <SidebarChat key={id} id={id} chatName={chatName}/>;
+                {chats.map(({id, data: { chatName }}) => {
+                    return <SidebarChat key={id} chatName={chatName}/>;
                 })}
             </div>
         </div>

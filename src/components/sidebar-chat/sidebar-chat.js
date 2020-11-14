@@ -6,12 +6,11 @@ import PropTypes from "prop-types";
 const SidebarChat = ({chatName}) => { 
     return (
         <div className="sidebarChat">
-            <Avatar/>
+            <Avatar />
             <div className="sidebarChat_info">
                 <h5>{chatName}</h5>
                 <p>Lase message ...</p>
-                <small>time</small>
-            
+                <small>time</small>        
             </div>
         </div>
     );
@@ -19,6 +18,6 @@ const SidebarChat = ({chatName}) => {
 
 SidebarChat.propTypes = {
     chatName: PropTypes.string
-  };
+};
 
 export default SidebarChat;
