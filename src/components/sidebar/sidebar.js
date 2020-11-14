@@ -11,18 +11,20 @@ import { auth, db } from "../../firebase";
 const SideBar = () => {
 
     const user = useSelector(selectUser);
-    const [chats, setChats] = React.useState([]);
+    const [chats, setChat] = React.useState([]);
 
-    React.useEffect(()=>{
-        db.collection("chats").onSnapshot((snapshot) => 
-            setChats(
-                snapshot.docs.map((doc)=> ({
-                    id: doc.id,
-                    data: doc.data()
-                }))
-            )
+    React.useEffect(() => {
+        db.collection("chats").onSnapshot(snapshot =>
+          setChat(
+            snapshot.docs.map(doc => {
+              return {
+                id: doc.id,
+                data: doc.data()
+              };
+            })
+          )
         );
-    },[]);
+      }, []);
     
     // console.log(chats);
 
@@ -53,9 +55,9 @@ const SideBar = () => {
                 </IconButton>
             </div>
             <div className="sidebar_chats">
-                {chats.map(({id, data: { chatName }}) => {
-                    return <SidebarChat key={id} chatName={chatName}/>;
-                })}
+                {chats.map(({id, data: { chatName }}) => (
+                     <SidebarChat key={id} chatName={chatName} id={id}/>
+                ))}
             </div>
         </div>
     );
