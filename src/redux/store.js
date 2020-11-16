@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
-import userReducer from "../features/userSlice";
-import chatReducer from "../features/chatSlice";
+import userReducer from "./userSlice";
+import chatReducer from "./chatSlice";
 
 export default configureStore({
   reducer: {

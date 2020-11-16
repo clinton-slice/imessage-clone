@@ -3,7 +3,7 @@ import React from "react";
 import "./sidebar-chat.css";
 import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
-import { setChat } from "../../features/chatSlice";
+import { setChat } from "../../redux/chatSlice";
 import { db } from "../../firebase";
 import * as timeago from "timeago.js";
 
