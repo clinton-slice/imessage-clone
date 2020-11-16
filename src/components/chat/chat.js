@@ -2,11 +2,11 @@ import { IconButton } from "@material-ui/core";
 import { MicNone } from "@material-ui/icons";
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { selectchatId, selectchatName } from "../../features/chatSlice";
-import { db } from "../../firebase";
+import { selectchatId, selectchatName } from "../../redux/chatSlice";
+import { db } from "../../config/firebase";
 import Message from "../message/message";
 import firebase from "firebase";
-import { selectUser } from "../../features/userSlice";
+import { selectUser } from "../../redux/userSlice";
 import "./chat.css";
 
 const Chat = () => {
