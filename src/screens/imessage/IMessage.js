@@ -1,6 +1,6 @@
 import React from "react";
-import Chat from "../chat/chat";
-import SideBar from "../sidebar/sidebar";
+import Chat from "../../components/chat/chat";
+import SideBar from "../../components/sidebar/sidebar";
 import "./imessage.css";
 
 const Imessage = () => {    

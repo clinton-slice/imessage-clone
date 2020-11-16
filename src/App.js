@@ -1,10 +1,9 @@
 import React from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {login, logout, selectUser} from "./features/userSlice";
-import "./App.css";
-import Imessage from "./components/imessage/IMessage";
+import {login, logout, selectUser} from "./redux/userSlice";
+import Imessage from "./screens/imessage/IMessage";
 import Login from "./components/login/login";
-import { auth } from "./firebase";
+import { auth } from "./config/firebase";
 
 function App() {
   const user = useSelector(selectUser);
@@ -12,7 +11,7 @@ function App() {
   React.useEffect(()=>{
     auth.onAuthStateChanged(authUser => {
       if(authUser) {
-        //user is logges in
+        //user is logs in
         dispatch(login({
           uid: authUser.uid,
           photo: authUser.photoURL,
@@ -20,7 +19,7 @@ function App() {
           displayName: authUser.displayName,
         }));
       } else {
-        //user is logged out
+        //user is logs out
         dispatch(logout());
       }
     });

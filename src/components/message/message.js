@@ -3,7 +3,7 @@ import React from "react";
 import "./message.css";
 import PropTypes from "prop-types";
 import { useSelector } from "react-redux";
-import { selectUser } from "../../features/userSlice";
+import { selectUser } from "../../redux/userSlice";
 
 const Message = ({
     id, 
