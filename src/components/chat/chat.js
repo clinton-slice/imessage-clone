@@ -3,7 +3,7 @@ import { MicNone } from "@material-ui/icons";
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { selectchatId, selectchatName } from "../../redux/chatSlice";
-import { db } from "../../firebase";
+import { db } from "../../config/firebase";
 import Message from "../message/message";
 import firebase from "firebase";
 import { selectUser } from "../../redux/userSlice";
