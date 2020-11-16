@@ -4,7 +4,10 @@ Using this project to show off basic React, Redux and CSS skills<br />
 Utilized firebase for real time chat storage purpose
 
 **Desktop:** 🖥  💻
+# Login 
+![](https://github.com/clinton-slice/imessage-clone/blob/master/imessage-screenshot-login.png)
 
+# App
 ![](https://github.com/clinton-slice/imessage-clone/blob/master/imessage-screenshot.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
